@@ -44,6 +44,8 @@ public class SceneSurfaceView extends SurfaceView implements SurfaceHolder.Callb
         Log.d("weather", "surfaceCreated");
         if (renderThread == null) {
             renderThread = new RenderThread(surfaceHolder, getContext());
+            renderThread.setWidth(width);
+            renderThread.setHeight(height);
             renderThread.start();
         }
     }
